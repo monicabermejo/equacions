@@ -102,8 +102,17 @@ const FormattedText: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-const App: React.FC = () => {
-  const [state, setState] = useState<AppState>({
+const STORAGE_KEY = 'xhunter_progress';
+
+const loadState = (): AppState => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return { ...parsed, totalLevels: MATH_LEVELS.length };
+    }
+  } catch {}
+  return {
     currentLevel: 0,
     completedLevels: [],
     hintsUsed: 0,
@@ -111,11 +120,21 @@ const App: React.FC = () => {
     history: [],
     totalLevels: MATH_LEVELS.length,
     language: 'ca'
-  });
+  };
+};
+
+const App: React.FC = () => {
+  const [state, setState] = useState<AppState>(loadState);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch {}
+  }, [state]);
 
   const t = UI_STRINGS[state.language];
 
@@ -153,6 +172,7 @@ const App: React.FC = () => {
 
   const resetProgress = () => {
     if (window.confirm(t.resetConfirm)) {
+      localStorage.removeItem(STORAGE_KEY);
       setState({
         currentLevel: 0,
         completedLevels: [],
@@ -465,6 +485,7 @@ const App: React.FC = () => {
             <button 
               onClick={() => {
                 // Reiniciar simplemente recarga el estado a cero sin preguntar (porque ya completó)
+                localStorage.removeItem(STORAGE_KEY);
                 setState({
                   currentLevel: 0,
                   completedLevels: [],
