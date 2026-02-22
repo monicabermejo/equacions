@@ -58,7 +58,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 19,
+    id: 4,
     category: 'repaso',
     title: { ca: "Problema 4", es: "Problema 4" },
     equation: { ca: "x - 6 = 11", es: "x - 6 = 11" },
@@ -73,7 +73,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 20,
+    id: 5,
     category: 'repaso',
     title: { ca: "Problema 5", es: "Problema 5" },
     equation: { ca: "x/5 = 4", es: "x/5 = 4" },
@@ -88,7 +88,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 21,
+    id: 6,
     category: 'repaso',
     title: { ca: "Problema 6", es: "Problema 6" },
     equation: { ca: "2x + 1 = 9", es: "2x + 1 = 9" },
@@ -103,7 +103,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 4, 
+    id: 7, 
     category: 'facil',
     title: { ca: "Problema 7", es: "Problema 7" }, 
     equation: { ca: "7x + 3 = 4x + 15", es: "7x + 3 = 4x + 15" }, 
@@ -118,7 +118,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 5, 
+    id: 8, 
     category: 'facil',
     title: { ca: "Problema 8", es: "Problema 8" }, 
     equation: { ca: "3(x + 2) = 18", es: "3(x + 2) = 18" }, 
@@ -133,7 +133,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 6, 
+    id: 9, 
     category: 'facil',
     title: { ca: "Problema 9", es: "Problema 9" }, 
     equation: { ca: "2(x - 4) = 4(x - 6)", es: "2(x - 4) = 4(x - 6)" }, 
@@ -148,7 +148,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 7, 
+    id: 10, 
     category: 'facil',
     title: { ca: "Problema 10", es: "Problema 10" }, 
     equation: { ca: "x/4 + 3 = 8", es: "x/4 + 3 = 8" }, 
@@ -163,7 +163,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 22,
+    id: 11,
     category: 'facil',
     title: { ca: "Problema 11", es: "Problema 11" },
     equation: { ca: "6x - 4 = 2x + 20", es: "6x - 4 = 2x + 20" },
@@ -178,7 +178,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 23,
+    id: 12,
     category: 'facil',
     title: { ca: "Problema 12", es: "Problema 12" },
     equation: { ca: "5(x - 3) = 20", es: "5(x - 3) = 20" },
@@ -193,7 +193,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 8, 
+    id: 13, 
     category: 'intermedio',
     title: { ca: "Problema 13", es: "Problema 13" }, 
     equation: { ca: "x/2 + x/3 = 10", es: "x/2 + x/3 = 10" }, 
@@ -208,7 +208,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 9, 
+    id: 14, 
     category: 'intermedio',
     title: { ca: "Problema 14", es: "Problema 14" }, 
     equation: { ca: "El triple d'un número menys 7 és igual a 20. Quin és el número?", es: "El triple de un número menos 7 es igual a 20. ¿Cuál es el número?" }, 
@@ -223,7 +223,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 10, 
+    id: 15, 
     category: 'intermedio',
     title: { ca: "Problema 15", es: "Problema 15" }, 
     equation: { ca: "2(x/3 + 1) = x - 4", es: "2(x/3 + 1) = x - 4" }, 
@@ -238,7 +238,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 11, 
+    id: 16, 
     category: 'intermedio',
     title: { ca: "Problema 16", es: "Problema 16" }, 
     equation: { ca: "Un número més el seu doble és 45. Quin és el número?", es: "Un número más su doble es 45. ¿Cuál es el número?" }, 
@@ -253,7 +253,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 12, 
+    id: 17, 
     category: 'intermedio',
     title: { ca: "Problema 17", es: "Problema 17" }, 
     equation: { ca: "En un rectangle, la base mesura 5cm més que l'altura i el perímetre és 30cm. Quant mesura l'altura?", es: "En un rectángulo, la base mide 5cm más que la altura y el perímetro es 30cm. ¿Cuánto mide la altura?" }, 
@@ -268,7 +268,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   { 
-    id: 13, 
+    id: 18, 
     category: 'intermedio',
     title: { ca: "Problema 18", es: "Problema 18" }, 
     equation: { ca: "Gasto 1/4 dels meus estalvis al cinema i 1/2 en el sopar. Si em queden 10€, quants estalvis tenia?", es: "Gasto 1/4 de mis ahorros en el cine y 1/2 en la cena. Si me quedan 10€, ¿cuántos ahorros tenía?" }, 
@@ -283,7 +283,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 14,
+    id: 19,
     category: 'dificil',
     title: { ca: "Problema 19", es: "Problema 19" },
     equation: { ca: "5x + 35 = 0", es: "5x + 35 = 0" },
@@ -298,7 +298,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 15,
+    id: 20,
     category: 'dificil',
     title: { ca: "Problema 20", es: "Problema 20" },
     equation: { ca: "La Maria té el doble d'anys que en Joan. D'aquí a 5 anys, entre els dos sumaran 40 anys. Quants anys té en Joan ara?", es: "María tiene el doble de años que Juan. Dentro de 5 años, entre los dos sumarán 40 años. ¿Cuántos años tiene Juan ahora?" },
@@ -313,7 +313,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 16,
+    id: 21,
     category: 'dificil',
     title: { ca: "Problema 21", es: "Problema 21" },
     equation: { ca: "Dos ciclistes surten del mateix punt en direccions oposades: un a 15 km/h i l'altre a 25 km/h. Quantes hores (x) han de pedalar per estar a 120 km?", es: "Dos ciclistas parten del mismo punto en direcciones opuestas: uno a 15 km/h y el otro a 25 km/h. ¿Cuántas horas (x) deben pedalear para estar a 120 km?" },
@@ -328,7 +328,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 17,
+    id: 22,
     category: 'dificil',
     title: { ca: "Problema 22", es: "Problema 22" },
     equation: { ca: "(3x + 2)/4 - (x - 1)/2 = 3", es: "(3x + 2)/4 - (x - 1)/2 = 3" },
@@ -343,7 +343,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     }
   },
   {
-    id: 18,
+    id: 23,
     category: 'dificil',
     title: { ca: "Problema 23", es: "Problema 23" },
     equation: { ca: "Un tren surt de A cap a B a 60 km/h. Tres hores després, un segon tren surt del mateix punt a 90 km/h en la mateixa direcció. Quantes hores (x) després de la sortida del segon tren s'alcançaran?", es: "Un tren sale de A hacia B a 60 km/h. Tres horas después, un segundo tren sale del mismo punto a 90 km/h en la misma dirección. ¿Cuántas horas (x) después de la salida del segundo tren se alcanzarán?" },
