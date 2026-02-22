@@ -56,11 +56,11 @@ const UI_STRINGS = {
   }
 };
 
-const CATEGORIES: { key: LevelCategory; color: string; badge: string }[] = [
-  { key: 'repaso',     color: 'text-slate-500',  badge: 'bg-slate-100 text-slate-600' },
-  { key: 'facil',      color: 'text-emerald-600', badge: 'bg-emerald-100 text-emerald-700' },
-  { key: 'intermedio', color: 'text-amber-600',   badge: 'bg-amber-100 text-amber-700' },
-  { key: 'dificil',    color: 'text-rose-600',    badge: 'bg-rose-100 text-rose-700' },
+const CATEGORIES: { key: LevelCategory; color: string; badge: string; starFill: string; starGlow: string; label: Record<'ca'|'es', string> }[] = [
+  { key: 'repaso',     color: 'text-slate-500',  badge: 'bg-slate-100 text-slate-600',   starFill: 'text-slate-400',   starGlow: 'text-slate-500 drop-shadow-[0_0_6px_rgba(100,116,139,0.8)]',  label: { ca: 'Repàs',    es: 'Repaso'     } },
+  { key: 'facil',      color: 'text-emerald-600', badge: 'bg-emerald-100 text-emerald-700', starFill: 'text-emerald-300', starGlow: 'text-emerald-400 drop-shadow-[0_0_6px_rgba(52,211,153,0.9)]',  label: { ca: 'Fàcil',     es: 'Fácil'      } },
+  { key: 'intermedio', color: 'text-amber-600',   badge: 'bg-amber-100 text-amber-700',   starFill: 'text-amber-300',   starGlow: 'text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.9)]',   label: { ca: 'Intermig', es: 'Intermedio' } },
+  { key: 'dificil',    color: 'text-rose-600',    badge: 'bg-rose-100 text-rose-700',     starFill: 'text-rose-300',    starGlow: 'text-rose-400 drop-shadow-[0_0_6px_rgba(251,113,133,0.9)]',   label: { ca: 'Difícil',   es: 'Difícil'    } },
 ];
 
 const FormattedText: React.FC<{ text: string }> = ({ text }) => {
@@ -379,7 +379,8 @@ const App: React.FC = () => {
       </aside>
 
       {/* Header */}
-      <header className="bg-indigo-600 text-white p-4 sticky top-0 z-10 flex justify-between items-center shadow-md">
+      <header className="bg-indigo-600 text-white sticky top-0 z-10 shadow-md">
+        <div className="flex justify-between items-center p-4">
         <div className="flex items-center gap-3">
           <button 
             onClick={() => setIsMenuOpen(true)}
@@ -403,6 +404,29 @@ const App: React.FC = () => {
             <div className="text-sm font-medium">{t.level} {state.currentLevel + 1} / {state.totalLevels}</div>
             <div className="text-[10px] opacity-75">{t.hints}: {state.hintsUsed}</div>
           </div>
+        </div>
+        </div>
+
+        {/* Star progress bar */}
+        <div className="flex justify-around items-center px-4 pb-3">
+          {CATEGORIES.map(({ key, starFill, starGlow, label }) => {
+            const levelIndices = MATH_LEVELS.map((l, i) => ({ cat: l.category, i })).filter(x => x.cat === key).map(x => x.i);
+            const completedCount = levelIndices.filter(i => state.completedLevels.includes(i)).length;
+            const earned = completedCount >= 2;
+            return (
+              <div key={key} className="flex flex-col items-center gap-0.5">
+                <i className={`fas fa-star text-2xl transition-all duration-500 ${
+                  earned ? starGlow : 'text-white/20'
+                }`}></i>
+                <span className={`text-[9px] font-bold uppercase tracking-wider transition-all duration-500 ${
+                  earned ? 'text-white' : 'text-white/30'
+                }`}>{label[state.language]}</span>
+                <span className={`text-[9px] transition-all duration-500 ${
+                  earned ? 'text-white/80' : 'text-white/20'
+                }`}>{completedCount}/2</span>
+              </div>
+            );
+          })}
         </div>
       </header>
 
