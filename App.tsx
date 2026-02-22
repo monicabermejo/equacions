@@ -162,10 +162,16 @@ const App: React.FC = () => {
 
   const toggleLanguage = () => {
     const newLang: Language = state.language === 'ca' ? 'es' : 'ca';
+    const newT = UI_STRINGS[newLang];
+    const currentLevelData = MATH_LEVELS[state.currentLevel];
     setState(prev => ({
       ...prev,
-      language: newLang
-      // Ya no borramos el historial aquí
+      language: newLang,
+      history: [{
+        role: 'assistant',
+        text: `${newT.greeting}\n\n**${currentLevelData.title[newLang]}**\n${newT.problem}: ${currentLevelData.equation[newLang]}`,
+        timestamp: Date.now()
+      }]
     }));
     setIsMenuOpen(false);
   };
