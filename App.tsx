@@ -149,7 +149,7 @@ const App: React.FC = () => {
         ...prev,
         history: [{
           role: 'assistant',
-          text: `${t.greeting}\n\n**${firstLevel.title[state.language]}**\n${t.problem}: ${firstLevel.equation[state.language]}`,
+          text: `${t.greeting}\n\n**${firstLevel.title[state.language]}**\n${firstLevel.equation[state.language]}`,
           timestamp: Date.now()
         }]
       }));
@@ -169,7 +169,7 @@ const App: React.FC = () => {
       language: newLang,
       history: [{
         role: 'assistant',
-        text: `${newT.greeting}\n\n**${currentLevelData.title[newLang]}**\n${newT.problem}: ${currentLevelData.equation[newLang]}`,
+        text: `${newT.greeting}\n\n**${currentLevelData.title[newLang]}**\n${currentLevelData.equation[newLang]}`,
         timestamp: Date.now()
       }]
     }));
@@ -266,7 +266,7 @@ const App: React.FC = () => {
                 ? prev.completedLevels
                 : [...prev.completedLevels, prev.currentLevel]
             }));
-            addMessage('assistant', `✅ **${t.correct}** ${evaluation.feedback}\n\n${t.nextLevel}\n\n**${nextLevelData.title[state.language]}**\n${t.problem}: ${nextLevelData.equation[state.language]}`);
+            addMessage('assistant', `✅ **${t.correct}** ${evaluation.feedback}\n\n${t.nextLevel}\n\n**${nextLevelData.title[state.language]}**\n${nextLevelData.equation[state.language]}`);
           }
         } else {
           addMessage('assistant', `❌ ${evaluation.feedback}`);
@@ -283,7 +283,7 @@ const App: React.FC = () => {
       currentLevel: index,
       completed: false,
     }));
-    addMessage('assistant', `**${levelData.title[state.language]}**\n${t.problem}: ${levelData.equation[state.language]}`);
+    addMessage('assistant', `**${levelData.title[state.language]}**\n${levelData.equation[state.language]}`);
     setIsMenuOpen(false);
   };
 
