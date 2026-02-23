@@ -400,10 +400,7 @@ const App: React.FC = () => {
           >
             {state.language === 'ca' ? 'ES' : 'CA'}
           </button>
-          <div className="text-right hidden sm:block">
-            <div className="text-sm font-medium">{t.level} {state.currentLevel + 1} / {state.totalLevels}</div>
-            <div className="text-[10px] opacity-75">{t.hints}: {state.hintsUsed}</div>
-          </div>
+
         </div>
         </div>
 
