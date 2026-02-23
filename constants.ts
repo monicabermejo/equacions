@@ -361,7 +361,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     id: 24,
     category: 'dificil',
     title: { ca: "Problema 24", es: "Problema 24" },
-    equation: { ca: "Un dipòsit de gasolina tenia 10 litres. Hem afegit 20 litres i ara està ple fins a les 3/4 parts de la seva capacitat total (x). Quants litres caben al dipòsit?", es: "Un depósito de gasolina tenía 10 litros. Hemos añadido 20 litros y ahora está lleno hasta las 3/4 partes de su capacidad total (x). ¿Cuántos litros caben en el depósito?" },
+    equation: { ca: "Un dipòsit de gasolina tenia 10 litres. Hem afegit 20 litres i ara està ple fins a les 3/4 parts de la seva capacitat total. Quants litres caben al dipòsit?", es: "Un depósito de gasolina tenía 10 litros. Hemos añadido 20 litros y ahora está lleno hasta las 3/4 partes de su capacidad total. ¿Cuántos litros caben en el depósito?" },
     expectedAnswer: "40",
     hints: {
       ca: ["Després d'afegir 20 litres, tenim 10 + 20 = 30 litres.", "Aquests 30 litres representen les 3/4 parts de x: 30 = (3/4)x.", "Multiplica els dos costats per 4/3, o bé per 4 i després divideix per 3."],
@@ -376,7 +376,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     id: 25,
     category: 'dificil',
     title: { ca: "Problema 25", es: "Problema 25" },
-    equation: { ca: "En una granja hi ha gallines i conills. En total hi ha 20 caps i 56 potes. Quantes gallines (x) hi ha?", es: "En una granja hay gallinas y conejos. En total hay 20 cabezas y 56 patas. ¿Cuántas gallinas (x) hay?" },
+    equation: { ca: "En una granja hi ha gallines i conills. En total hi ha 20 caps i 56 potes. Quantes gallines hi ha?", es: "En una granja hay gallinas y conejos. En total hay 20 cabezas y 56 patas. ¿Cuántas gallinas hay?" },
     expectedAnswer: "12",
     hints: {
       ca: ["Gallines = x, conills = 20 - x.", "Les gallines tenen 2 potes i els conills 4: 2x + 4(20 - x) = 56.", "Desenvolupa: 2x + 80 - 4x = 56."],
@@ -391,15 +391,15 @@ export const MATH_LEVELS: StaticLevel[] = [
     id: 26,
     category: 'dificil',
     title: { ca: "Problema 26", es: "Problema 26" },
-    equation: { ca: "En una competició de videojocs, la puntuació d'en Pau és x. Si a la seva puntuació li sumes el doble i li restas 150, obtens exactament 900 punts. Quina és la puntuació d'en Pau?", es: "En una competición de videojuegos, la puntuación de Pablo es x. Si a su puntuación le sumas el doble y le restas 150, obtienes exactamente 900 puntos. ¿Cuál es la puntuación de Pablo?" },
-    expectedAnswer: "350",
+    equation: { ca: "Dues espelmes s'encenen alhora. L'espelma A mesura 20 cm i es consumeix a 2 cm/hora. L'espelma B mesura 14 cm i es consumeix a 1 cm/hora. Al cap de quantes hores tindran la mateixa alçada?", es: "Dos velas se encienden a la vez. La vela A mide 20 cm y se consume a 2 cm/hora. La vela B mide 14 cm y se consume a 1 cm/hora. ¿Al cabo de cuántas horas tendrán la misma altura?" },
+    expectedAnswer: "6",
     hints: {
-      ca: ["'La puntuació més el doble' és x + 2x = 3x.", "L'equació és 3x - 150 = 900.", "Passa el 150 a l'altre costat i divideix per 3."],
-      es: ["'La puntuación más el doble' es x + 2x = 3x.", "La ecuación es 3x - 150 = 900.", "Pasa el 150 al otro lado y divide entre 3."]
+      ca: ["Alçada de l'espelma A després de x hores: 20 - 2x. Alçada de l'espelma B: 14 - x.", "Igualem les dues alçades: 20 - 2x = 14 - x.", "Passa el -x a l'esquerra i el 20 a la dreta: 20 - 14 = 2x - x."],
+      es: ["Altura de la vela A después de x horas: 20 - 2x. Altura de la vela B: 14 - x.", "Igualamos las dos alturas: 20 - 2x = 14 - x.", "Pasa el -x a la izquierda y el 20 a la derecha: 20 - 14 = 2x - x."]
     },
     feedback: {
-      ca: { wrong: "Planta: x + 2x - 150 = 900, és a dir 3x - 150 = 900." },
-      es: { wrong: "Plantea: x + 2x - 150 = 900, es decir 3x - 150 = 900." }
+      ca: { wrong: "Planta: 20 - 2x = 14 - x. Reagrupa les x i els números a bandes oposades." },
+      es: { wrong: "Plantea: 20 - 2x = 14 - x. Reagrupa las x y los números en lados opuestos." }
     }
   }
 ];
