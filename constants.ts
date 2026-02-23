@@ -356,5 +356,50 @@ export const MATH_LEVELS: StaticLevel[] = [
       ca: { wrong: "Igualem les distàncies: 60·(x+3) = 90·x. Resol-ho pas a pas!" },
       es: { wrong: "Igualamos las distancias: 60·(x+3) = 90·x. ¡Resuélvelo paso a paso!" }
     }
+  },
+  {
+    id: 24,
+    category: 'dificil',
+    title: { ca: "Problema 24", es: "Problema 24" },
+    equation: { ca: "Un dipòsit de gasolina tenia 10 litres. Hem afegit 20 litres i ara està ple fins a les 3/4 parts de la seva capacitat total (x). Quants litres caben al dipòsit?", es: "Un depósito de gasolina tenía 10 litros. Hemos añadido 20 litros y ahora está lleno hasta las 3/4 partes de su capacidad total (x). ¿Cuántos litros caben en el depósito?" },
+    expectedAnswer: "40",
+    hints: {
+      ca: ["Després d'afegir 20 litres, tenim 10 + 20 = 30 litres.", "Aquests 30 litres representen les 3/4 parts de x: 30 = (3/4)x.", "Multiplica els dos costats per 4/3, o bé per 4 i després divideix per 3."],
+      es: ["Después de añadir 20 litros, tenemos 10 + 20 = 30 litros.", "Esos 30 litros representan las 3/4 partes de x: 30 = (3/4)x.", "Multiplica ambos lados por 4/3, o bien multiplica por 4 y luego divide entre 3."]
+    },
+    feedback: {
+      ca: { wrong: "Si 3/4 de x són 30 litres, multiplica 30 per 4 i divideix per 3." },
+      es: { wrong: "Si 3/4 de x son 30 litros, multiplica 30 por 4 y divide entre 3." }
+    }
+  },
+  {
+    id: 25,
+    category: 'dificil',
+    title: { ca: "Problema 25", es: "Problema 25" },
+    equation: { ca: "En una granja hi ha gallines i conills. En total hi ha 20 caps i 56 potes. Quantes gallines (x) hi ha?", es: "En una granja hay gallinas y conejos. En total hay 20 cabezas y 56 patas. ¿Cuántas gallinas (x) hay?" },
+    expectedAnswer: "12",
+    hints: {
+      ca: ["Gallines = x, conills = 20 - x.", "Les gallines tenen 2 potes i els conills 4: 2x + 4(20 - x) = 56.", "Desenvolupa: 2x + 80 - 4x = 56."],
+      es: ["Gallinas = x, conejos = 20 - x.", "Las gallinas tienen 2 patas y los conejos 4: 2x + 4(20 - x) = 56.", "Desarrolla: 2x + 80 - 4x = 56."]
+    },
+    feedback: {
+      ca: { wrong: "Planta: 2x + 4(20-x) = 56. Recorda que els conills son (20-x)." },
+      es: { wrong: "Plantea: 2x + 4(20-x) = 56. Recuerda que los conejos son (20-x)." }
+    }
+  },
+  {
+    id: 26,
+    category: 'dificil',
+    title: { ca: "Problema 26", es: "Problema 26" },
+    equation: { ca: "En una competició de videojocs, la puntuació d'en Pau és x. Si a la seva puntuació li sumes el doble i li restas 150, obtens exactament 900 punts. Quina és la puntuació d'en Pau?", es: "En una competición de videojuegos, la puntuación de Pablo es x. Si a su puntuación le sumas el doble y le restas 150, obtienes exactamente 900 puntos. ¿Cuál es la puntuación de Pablo?" },
+    expectedAnswer: "350",
+    hints: {
+      ca: ["'La puntuació més el doble' és x + 2x = 3x.", "L'equació és 3x - 150 = 900.", "Passa el 150 a l'altre costat i divideix per 3."],
+      es: ["'La puntuación más el doble' es x + 2x = 3x.", "La ecuación es 3x - 150 = 900.", "Pasa el 150 al otro lado y divide entre 3."]
+    },
+    feedback: {
+      ca: { wrong: "Planta: x + 2x - 150 = 900, és a dir 3x - 150 = 900." },
+      es: { wrong: "Plantea: x + 2x - 150 = 900, es decir 3x - 150 = 900." }
+    }
   }
 ];
