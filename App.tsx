@@ -412,7 +412,7 @@ const App: React.FC = () => {
           {CATEGORIES.map(({ key, starFill, starGlow, label }) => {
             const levelIndices = MATH_LEVELS.map((l, i) => ({ cat: l.category, i })).filter(x => x.cat === key).map(x => x.i);
             const completedCount = levelIndices.filter(i => state.completedLevels.includes(i)).length;
-            const earned = completedCount >= 2;
+            const earned = completedCount >= 3;
             return (
               <div key={key} className="flex flex-col items-center gap-0.5">
                 <i className={`fas fa-star text-2xl transition-all duration-500 ${
@@ -423,7 +423,7 @@ const App: React.FC = () => {
                 }`}>{label[state.language]}</span>
                 <span className={`text-[9px] transition-all duration-500 ${
                   earned ? 'text-white/80' : 'text-white/20'
-                }`}>{completedCount}/2</span>
+                }`}>{completedCount}/3</span>
               </div>
             );
           })}
