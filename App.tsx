@@ -27,7 +27,14 @@ const UI_STRINGS = {
     catRepaso: "Repàs",
     catFacil: "Fàcil",
     catIntermedio: "Intermig",
-    catDificil: "Difícil"
+    catDificil: "Difícil",
+    helpTitle: "Com funciona?",
+    helpSteps: [
+      { icon: "fa-bars",        title: "Menú de nivells",       body: "Prem el botó ☰ per obrir el menú lateral. Els 26 problemes estàn agrupats en 4 seccions: Repàs, Fàcil, Intermig i Difícil. Pots saltar directament a qualsevol problema." },
+      { icon: "fa-keyboard",    title: "Dona la solució",        body: "Escriu el valor de x al quadre de text i prem Enter o el botó &#9992;. Per exemple: x=5 o simplement 5. Si et perds, escriu \"pista\" per obtenir una ajuda." },
+      { icon: "fa-chart-bar",   title: "El teu progrés",         body: "La barra inferior mostra quants problemes has completat del total. Cada problema completat compta, independentment de l'ordre en què el facis." },
+      { icon: "fa-star",        title: "Estrellas per secció",   body: "Les 4 estelles de la part superior s'il·luminen quan completes 3 problemes de cada secció. Intenta aconseguir les 4 estelles!" }
+    ]
   },
   es: {
     headerSub: "Ecuaciones de 1er Grado",
@@ -52,7 +59,14 @@ const UI_STRINGS = {
     catRepaso: "Repaso",
     catFacil: "Fácil",
     catIntermedio: "Intermedio",
-    catDificil: "Difícil"
+    catDificil: "Difícil",
+    helpTitle: "¿Cómo funciona?",
+    helpSteps: [
+      { icon: "fa-bars",        title: "Menú de niveles",       body: "Pulsa el botón ☰ para abrir el menú lateral. Los 26 problemas están agrupados en 4 secciones: Repaso, Fácil, Intermedio y Difícil. Puedes saltar directamente a cualquier problema." },
+      { icon: "fa-keyboard",    title: "Da la solución",        body: "Escribe el valor de x en el cuadro de texto y pulsa Enter o el botón &#9992;. Por ejemplo: x=5 o simplemente 5. Si te atascas, escribe \"pista\" para recibir una ayuda." },
+      { icon: "fa-chart-bar",   title: "Tu progreso",            body: "La barra inferior muestra cuántos problemas has completado del total. Cada problema completado cuenta, independientemente del orden en que lo hagas." },
+      { icon: "fa-star",        title: "Estrellas por sección", body: "Las 4 estrellas de la parte superior se iluminan al completar 3 problemas de cada sección. ¡Intenta conseguir las 4 estrellas!" }
+    ]
   }
 };
 
@@ -128,6 +142,7 @@ const App: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -298,6 +313,33 @@ const App: React.FC = () => {
   return (
     <div className="h-screen flex flex-col max-w-2xl mx-auto bg-white shadow-2xl relative">
       
+      {/* Help Modal */}
+      {isHelpOpen && (
+        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setIsHelpOpen(false)}>
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden" onClick={e => e.stopPropagation()}>
+            <div className="bg-indigo-600 px-5 py-4 flex justify-between items-center">
+              <h2 className="text-white font-bold text-lg">{t.helpTitle}</h2>
+              <button onClick={() => setIsHelpOpen(false)} className="text-white/70 hover:text-white transition-colors">
+                <i className="fas fa-times text-xl"></i>
+              </button>
+            </div>
+            <div className="p-5 space-y-4">
+              {t.helpSteps.map((step, i) => (
+                <div key={i} className="flex gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                    <i className={`fas ${step.icon} text-indigo-500 text-sm`}></i>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-slate-800">{step.title}</p>
+                    <p className="text-xs text-slate-500 leading-relaxed mt-0.5" dangerouslySetInnerHTML={{ __html: step.body }}></p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Sidebar Overlay */}
       <div 
         className={`fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
@@ -393,14 +435,20 @@ const App: React.FC = () => {
             <p className="text-xs text-indigo-100 uppercase tracking-widest font-semibold">{t.headerSub}</p>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setIsHelpOpen(true)}
+            className="bg-white/20 hover:bg-white/30 p-2 rounded-lg transition-all border border-white/10"
+            title={t.helpTitle}
+          >
+            <i className="fas fa-question text-sm"></i>
+          </button>
           <button 
             onClick={toggleLanguage}
             className="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs font-bold transition-all border border-white/10 uppercase"
           >
             {state.language === 'ca' ? 'ES' : 'CA'}
           </button>
-
         </div>
         </div>
 
