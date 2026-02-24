@@ -286,7 +286,7 @@ export const MATH_LEVELS: StaticLevel[] = [
     id: 19,
     category: 'dificil',
     title: { ca: "Problema 19", es: "Problema 19" },
-    equation: { ca: "Una bossa té canicas de tres colors: la meitat són vermelles, un terç són blaves i les 4 restants són verdes. Quantes canicas hi ha a la bossa en total?", es: "Una bolsa tiene canicas de tres colores: la mitad son rojas, un tercio son azules y las 4 restantes son verdes. ¿Cuántas canicas hay en la bolsa en total?" },
+    equation: { ca: "Una bossa té bales de tres colors: la meitat són vermelles, un terç són blaves i les 4 restants són verdes. Quantes bales hi ha a la bossa en total?", es: "Una bolsa tiene canicas de tres colores: la mitad son rojas, un tercio son azules y las 4 restantes son verdes. ¿Cuántas canicas hay en la bolsa en total?" },
     expectedAnswer: "24",
     hints: {
       ca: ["Sigui x el total. Les vermelles són x/2, les blaves x/3 i les verdes 4.", "L'equació és: x - x/2 - x/3 = 4.", "Multiplica-ho tot per 6 per treure denominadors: 6x - 3x - 2x = 24."],
