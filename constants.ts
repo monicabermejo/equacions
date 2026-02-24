@@ -286,15 +286,15 @@ export const MATH_LEVELS: StaticLevel[] = [
     id: 19,
     category: 'dificil',
     title: { ca: "Problema 19", es: "Problema 19" },
-    equation: { ca: "5x + 35 = 0", es: "5x + 35 = 0" },
-    expectedAnswer: "-7",
+    equation: { ca: "Una bossa té canicas de tres colors: la meitat són vermelles, un terç són blaves i les 4 restants són verdes. Quantes canicas hi ha a la bossa en total?", es: "Una bolsa tiene canicas de tres colores: la mitad son rojas, un tercio son azules y las 4 restantes son verdes. ¿Cuántas canicas hay en la bolsa en total?" },
+    expectedAnswer: "24",
     hints: {
-      ca: ["Passa el 35 a l'altre costat restant: 5x = -35.", "El resultat pot ser negatiu, no et sorprenguis.", "Divideix -35 entre 5."],
-      es: ["Pasa el 35 al otro lado restando: 5x = -35.", "El resultado puede ser negativo, no te sorprendas.", "Divide -35 entre 5."]
+      ca: ["Sigui x el total. Les vermelles són x/2, les blaves x/3 i les verdes 4.", "L'equació és: x - x/2 - x/3 = 4.", "Multiplica-ho tot per 6 per treure denominadors: 6x - 3x - 2x = 24."],
+      es: ["Sea x el total. Las rojas son x/2, las azules x/3 y las verdes 4.", "La ecuación es: x - x/2 - x/3 = 4.", "Multiplícalo todo por 6 para quitar denominadores: 6x - 3x - 2x = 24."]
     },
     feedback: {
-      ca: { wrong: "Compte! El resultat és negatiu. Si 5x = -35, quant val x?" },
-      es: { wrong: "¡Ojo! El resultado es negativo. Si 5x = -35, ¿cuánto vale x?" }
+      ca: { wrong: "Planta: x - x/2 - x/3 = 4. Multiplica tot per 6 i simplifica." },
+      es: { wrong: "Plantea: x - x/2 - x/3 = 4. Multiplica todo por 6 y simplifica." }
     }
   },
   {
