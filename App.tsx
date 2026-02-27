@@ -33,7 +33,7 @@ const UI_STRINGS = {
       { icon: "fa-bars",        title: "Menú de nivells",       body: "Prem el botó ☰ per obrir el menú lateral. Els 26 problemes estàn agrupats en 4 seccions: Repàs, Fàcil, Intermig i Difícil. Pots saltar directament a qualsevol problema." },
       { icon: "fa-keyboard",    title: "Dona la solució",        body: "Escriu el valor de x al quadre de text i prem Enter o el botó &#9992;. Per exemple: x=5 o simplement 5. Si et perds, escriu \"pista\" per obtenir una ajuda." },
       { icon: "fa-chart-bar",   title: "El teu progrés",         body: "La barra inferior mostra quants problemes has completat del total. Cada problema completat compta, independentment de l'ordre en què el facis." },
-      { icon: "fa-star",        title: "Estrellas per secció",   body: "Les 4 estelles de la part superior s'il·luminen quan completes 3 problemes de cada secció. Intenta aconseguir les 4 estelles!" }
+      { icon: "fa-star",        title: "Estrellas per secció",   body: "Les 4 estelles de la part superior s'il·luminen quan completes 2 problemes de cada secció. Intenta aconseguir les 4 estelles!" }
     ]
   },
   es: {
@@ -65,7 +65,7 @@ const UI_STRINGS = {
       { icon: "fa-bars",        title: "Menú de niveles",       body: "Pulsa el botón ☰ para abrir el menú lateral. Los 26 problemas están agrupados en 4 secciones: Repaso, Fácil, Intermedio y Difícil. Puedes saltar directamente a cualquier problema." },
       { icon: "fa-keyboard",    title: "Da la solución",        body: "Escribe el valor de x en el cuadro de texto y pulsa Enter o el botón &#9992;. Por ejemplo: x=5 o simplemente 5. Si te atascas, escribe \"pista\" para recibir una ayuda." },
       { icon: "fa-chart-bar",   title: "Tu progreso",            body: "La barra inferior muestra cuántos problemas has completado del total. Cada problema completado cuenta, independientemente del orden en que lo hagas." },
-      { icon: "fa-star",        title: "Estrellas por sección", body: "Las 4 estrellas de la parte superior se iluminan al completar 3 problemas de cada sección. ¡Intenta conseguir las 4 estrellas!" }
+      { icon: "fa-star",        title: "Estrellas por sección", body: "Las 4 estrellas de la parte superior se iluminan al completar 2 problemas de cada sección. ¡Intenta conseguir las 4 estrellas!" }
     ]
   }
 };
@@ -457,7 +457,7 @@ const App: React.FC = () => {
           {CATEGORIES.map(({ key, starFill, starGlow, label }) => {
             const levelIndices = MATH_LEVELS.map((l, i) => ({ cat: l.category, i })).filter(x => x.cat === key).map(x => x.i);
             const completedCount = levelIndices.filter(i => state.completedLevels.includes(i)).length;
-            const earned = completedCount >= 3;
+            const earned = completedCount >= 2;
             return (
               <div key={key} className="flex flex-col items-center gap-0.5">
                 <i className={`fas fa-star text-2xl transition-all duration-500 ${
@@ -468,7 +468,7 @@ const App: React.FC = () => {
                 }`}>{label[state.language]}</span>
                 <span className={`text-[9px] transition-all duration-500 ${
                   earned ? 'text-white/80' : 'text-white/20'
-                }`}>{completedCount}/3</span>
+                }`}>{completedCount}/2</span>
               </div>
             );
           })}
